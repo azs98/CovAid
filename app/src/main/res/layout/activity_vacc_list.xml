@@ -4,39 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".VaccList">
 
-    <Button
-        android:id="@+id/buttonSymptom"
-        android:layout_width="150dp"
+    <TextView
+        android:id="@+id/tv_vaccinationList"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:onClick="goToSymptoms"
-        android:text="Síntomas"
+        android:layout_marginTop="32dp"
+        android:text="@string/vaccination"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonVaccination"
-        android:layout_width="150dp"
+        android:id="@+id/btn_addVaccination"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:onClick="goToVaccinationList"
-        android:text="@string/vaccination"
+        android:layout_marginTop="26dp"
+        android:onClick="goToVaccination"
+        android:text="@string/add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSymptom" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_vaccinationList" />
 
-    <TextView
-        android:id="@+id/textAdvices"
-        android:layout_width="260dp"
-        android:layout_height="216dp"
-        android:layout_marginBottom="60dp"
-        android:text="TextView"
+    <ListView
+        android:id="@+id/lv_vaccinationList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="140dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_addVaccination" />
 </androidx.constraintlayout.widget.ConstraintLayout>

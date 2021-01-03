@@ -1,16 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Vaccination">
 
+    <EditText
+        android:id="@+id/et_vaccinationName"
+        android:layout_width="156dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="160dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_vaccinationName"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_vaccinationName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Vaccination"
-        tools:layout_editor_absoluteX="169dp"
-        tools:layout_editor_absoluteY="356dp" />
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="52dp"
+        android:text="@string/name"
+        app:layout_constraintEnd_toStartOf="@+id/et_vaccinationName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sw_hea"
+        android:layout_width="167dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:text="Switch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_vaccinationName" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sw_res"
+        android:layout_width="167dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:text="Switch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sw_hea" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sw_eld"
+        android:layout_width="167dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:text="Switch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sw_big" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sw_com"
+        android:layout_width="167dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:text="Switch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sw_ris" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sw_ess"
+        android:layout_width="167dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:text="Switch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sw_soc" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sw_soc"
+        android:layout_width="167dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:text="Switch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sw_com" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sw_ris"
+        android:layout_width="167dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:text="Switch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sw_eld" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sw_big"
+        android:layout_width="167dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:text="Switch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sw_res" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sw_edu"
+        android:layout_width="167dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:text="Switch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sw_ess" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sw_tee"
+        android:layout_width="167dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:text="Switch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sw_chi" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sw_pni"
+        android:layout_width="167dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:text="Switch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sw_prg" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sw_adu"
+        android:layout_width="167dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:text="Switch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sw_tee" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sw_prg"
+        android:layout_width="167dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:text="Switch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sw_hia" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sw_hia"
+        android:layout_width="167dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:text="Switch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sw_adu" />
+
+    <Button
+        android:id="@+id/btn_saveVaccination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sw_pni" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sw_chi"
+        android:layout_width="167dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:text="Switch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sw_edu" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

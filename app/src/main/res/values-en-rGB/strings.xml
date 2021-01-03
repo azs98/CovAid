@@ -9,4 +9,6 @@
     <string name="toast_stay_home">Stay home</string>
     <string name="symtomp1">Symtomp 1</string>
     <string name="symtomp2">Symtomp 2</string>
+    <string name="add">Add</string>
+    <string name="name">Name</string>
 </resources>

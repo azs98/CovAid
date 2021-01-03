@@ -13,6 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CovAid">
+        <activity android:name=".VaccList" />
+        <activity android:name=".Vaccination" />
 
         <uses-library
             android:name="com.google.android.wearable"
@@ -26,15 +28,6 @@
             android:value="false" />
 
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".Vaccination"
-            android:label="@string/title_activity_vaccination">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
