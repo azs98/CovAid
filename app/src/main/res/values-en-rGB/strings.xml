@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CovAid</string>
+    <string name="symptoms">Symptoms</string>
+    <string name="vaccination">Vaccination</string>
+    <string name="recommendations">Recommendations</string>
+    <string name="what_to_do">What to do</string>
+    <string name="toast_medical_centre">Call your medical centre</string>
+    <string name="toast_stay_home">Stay home</string>
+    <string name="symtomp1">Symtomp 1</string>
+    <string name="symtomp2">Symtomp 2</string>
+</resources>
