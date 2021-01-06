@@ -59,6 +59,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String createSymptomTableStatement = "CREATE TABLE " + SYMPTOM_TABLE +
                                         " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                                            COLUMN_SYMPTOM_NAME + " TEXT, " +
                                             COLUMN_SYMPTOM_DTB + " BOOL, " +
                                             COLUMN_SYMPTOM_CPP + " BOOL, " +
                                             COLUMN_SYMPTOM_CNF + " BOOL, " +
@@ -108,22 +109,22 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
-        cv.put(COLUMN_VACC_NAME, vm.getName());
-        cv.put(COLUMN_VACC_HEA, vm.isHea());
-        cv.put(COLUMN_VACC_RES, vm.isRes());
-        cv.put(COLUMN_VACC_BIG, vm.isBig());
-        cv.put(COLUMN_VACC_ELD, vm.isEld());
-        cv.put(COLUMN_VACC_RIS, vm.isRis());
-        cv.put(COLUMN_VACC_COM, vm.isCom());
-        cv.put(COLUMN_VACC_SOC, vm.isSoc());
-        cv.put(COLUMN_VACC_ESS, vm.isEss());
-        cv.put(COLUMN_VACC_EDU, vm.isEdu());
-        cv.put(COLUMN_VACC_CHI, vm.isChi());
-        cv.put(COLUMN_VACC_TEE, vm.isTee());
-        cv.put(COLUMN_VACC_ADU, vm.isAdu());
-        cv.put(COLUMN_VACC_HIA, vm.isHia());
-        cv.put(COLUMN_VACC_PRG, vm.isPrg());
-        cv.put(COLUMN_VACC_PNI, vm.isPni());
+        cv.put(COLUMN_SYMPTOM_NAME , vm.getName());
+        cv.put(COLUMN_SYMPTOM_DTB , vm.isHea());
+        cv.put(COLUMN_SYMPTOM_CPP , vm.isRes());
+        cv.put(COLUMN_SYMPTOM_CNF , vm.isBig());
+        cv.put(COLUMN_SYMPTOM_TSA , vm.isEld());
+        cv.put(COLUMN_SYMPTOM_BLU , vm.isRis());
+        cv.put(COLUMN_SYMPTOM_FEV , vm.isCom());
+        cv.put(COLUMN_SYMPTOM_COU , vm.isSoc());
+        cv.put(COLUMN_SYMPTOM_FAT , vm.isEss());
+        cv.put(COLUMN_SYMPTOM_MUS , vm.isEdu());
+        cv.put(COLUMN_SYMPTOM_HEA , vm.isChi());
+        cv.put(COLUMN_SYMPTOM_LST , vm.isTee());
+        cv.put(COLUMN_SYMPTOM_THR , vm.isAdu());
+        cv.put(COLUMN_SYMPTOM_CNG , vm.isHia());
+        cv.put(COLUMN_SYMPTOM_NAU , vm.isPrg());
+        cv.put(COLUMN_SYMPTOM_DIA , vm.isPni());
 
         long insert = db.insert(VACCINATION_TABLE, null, cv);
 
@@ -132,6 +133,79 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         } else {
             return true;
         }
+    }
+
+    public boolean addSymptoms(SymptomsModel sm) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(COLUMN_SYMPTOM_NAME, sm.getName());
+        cv.put(COLUMN_SYMPTOM_DTB, sm.isDtb());
+        cv.put(COLUMN_SYMPTOM_CPP, sm.isCpp());
+        cv.put(COLUMN_SYMPTOM_CNF, sm.isCnf());
+        cv.put(COLUMN_SYMPTOM_TSA, sm.isTsa());
+        cv.put(COLUMN_SYMPTOM_BLU, sm.isBlu());
+        cv.put(COLUMN_SYMPTOM_FEV, sm.isFev());
+        cv.put(COLUMN_SYMPTOM_COU, sm.isCou());
+        cv.put(COLUMN_SYMPTOM_FAT, sm.isFat());
+        cv.put(COLUMN_SYMPTOM_MUS, sm.isMus());
+        cv.put(COLUMN_SYMPTOM_HEA, sm.isHea());
+        cv.put(COLUMN_SYMPTOM_LST, sm.isLst());
+        cv.put(COLUMN_SYMPTOM_THR, sm.isThr());
+        cv.put(COLUMN_SYMPTOM_CNG, sm.isCng());
+        cv.put(COLUMN_SYMPTOM_NAU, sm.isNau());
+        cv.put(COLUMN_SYMPTOM_DIA, sm.isDia());
+
+
+
+        long insert = db.insert(SYMPTOM_TABLE, null, cv);
+
+        if(insert == -1){
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public SymptomsModel getSymptoms() {
+        SymptomsModel sm;
+
+        String queryString = "SELECT * FROM " + SYMPTOM_TABLE;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery(queryString, null);
+
+        if(cursor.moveToFirst()){
+            do {
+                int id = cursor.getInt(0);
+                String name = cursor.getString(1);
+                boolean dtb = cursor.getInt(3) == 1;
+                boolean cpp = cursor.getInt(4) == 1;
+                boolean cnf = cursor.getInt(5) == 1;
+                boolean tsa = cursor.getInt(6) == 1;
+                boolean blu = cursor.getInt(7) == 1;
+                boolean fev = cursor.getInt(8) == 1;
+                boolean cou = cursor.getInt(9) == 1;
+                boolean fat = cursor.getInt(10) == 1;
+                boolean mus = cursor.getInt(11) == 1;
+                boolean hea = cursor.getInt(12) == 1;
+                boolean lst = cursor.getInt(13) == 1;
+                boolean thr = cursor.getInt(14) == 1;
+                boolean cng = cursor.getInt(15) == 1;
+                boolean nau = cursor.getInt(16) == 1;
+                boolean dia = cursor.getInt(17) == 1;
+
+                sm = new SymptomsModel(id, name, dtb, cpp, cnf, tsa, blu,
+                        fev, cou, fat, mus, hea, lst, thr, cng, nau, dia);
+
+            } while (cursor.moveToNext());
+        }else{
+            sm = null;
+        }
+        cursor.close();
+        db.close();
+        return sm;
     }
 
     public List<VaccinationModel> getVaccinations(){
