@@ -5,7 +5,7 @@ public class VaccinationModel {
     private int id;
     private String name;
     private String priority;
-    private boolean hea;
+    private boolean hep;
     private boolean res;
     private boolean big;
     private boolean eld;
@@ -23,12 +23,19 @@ public class VaccinationModel {
 
     // constructors
 
-    public VaccinationModel(int id, String name, boolean hea, boolean res, boolean big, boolean eld,
+    public VaccinationModel(int id, String name, boolean hep, boolean res, boolean big, boolean eld,
                             boolean ris, boolean com, boolean soc, boolean ess, boolean edu, boolean chi,
-                            boolean tee, boolean adu, boolean hia, boolean prg, boolean pni) {
+                            boolean tee, boolean adu, boolean hia, boolean prg, boolean pni) throws Exception {
+        if(name.equals("")){
+            throw new Exception("name");
+        }
+        if((eld && chi) || (eld && tee) || (eld && adu) ||
+                (chi && tee) || (chi && adu) || (tee && adu)){
+            throw new Exception("age");
+        }
         this.id = id;
         this.name = name;
-        this.hea = hea;
+        this.hep = hep;
         this.res = res;
         this.big = big;
         this.eld = eld;
@@ -44,7 +51,7 @@ public class VaccinationModel {
         this.prg = prg;
         this.pni = pni;
 
-        if(this.hea || this.res || this.big || this.eld){
+        if(this.hep || this.res || this.big || this.eld){
             this.priority = "Enero - Marzo";
         }else{
             this.priority = "A partir de Marzo";
@@ -77,12 +84,12 @@ public class VaccinationModel {
         this.priority = priority;
     }
 
-    public boolean isHea() {
-        return hea;
+    public boolean isHep() {
+        return hep;
     }
 
-    public void setHea(boolean hea) {
-        this.hea = hea;
+    public void setHep(boolean hep) {
+        this.hep = hep;
     }
 
     public boolean isRes() {
@@ -199,9 +206,6 @@ public class VaccinationModel {
 
     @Override
     public String toString() {
-        return "VaccinationModel{" +
-                "name='" + name + '\'' +
-                ", priority='" + priority + '\'' +
-                '}';
+        return name + " | " + priority;
     }
 }

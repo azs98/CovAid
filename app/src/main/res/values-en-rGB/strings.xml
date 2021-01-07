@@ -11,4 +11,8 @@
     <string name="symtomp2">Symtomp 2</string>
     <string name="add">Add</string>
     <string name="name">Name</string>
+    <string name="tips_tittle">Three important actions to decelerate the propagation</string>
+    <string name="tip_one">Wear a mask</string>
+    <string name="tip_two">Clean your hands</string>
+    <string name="tip_three">Keep a safe distance (6 feet)</string>
 </resources>

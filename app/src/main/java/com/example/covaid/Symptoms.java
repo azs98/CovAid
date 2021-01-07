@@ -1,6 +1,7 @@
 package com.example.covaid;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import android.os.Bundle;
 import android.view.View;
@@ -11,47 +12,51 @@ import android.widget.Toast;
 public class Symptoms extends AppCompatActivity {
 
     Button button;
-    Switch sw_dtb, sw_cpp, sw_cnf, sw_tsa, sw_blu, sw_fev, sw_cou, sw_fat, sw_mus, sw_hea, sw_lst, sw_thr, sw_cng, sw_nau, sw_dia;
+    SwitchCompat sw_dtb, sw_cpp, sw_cnf, sw_tsa, sw_blu, sw_fev, sw_cou, sw_fat, sw_mus, sw_hea, sw_lst, sw_thr, sw_cng, sw_nau, sw_dia;
+    SymptomsModel symptoms;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_symptoms);
         button = (Button) findViewById(R.id.button_what);
-        sw_dtb = (Switch) findViewById(R.id.sw_dtb);
-        sw_cpp = (Switch) findViewById(R.id.sw_cpp);
-        sw_tsa = (Switch) findViewById(R.id.sw_tsa);
-        sw_blu = (Switch) findViewById(R.id.sw_blu);
-        sw_fev = (Switch) findViewById(R.id.sw_fev);
-        sw_cou = (Switch) findViewById(R.id.sw_cou);
-        sw_fat = (Switch) findViewById(R.id.sw_fat);
-        sw_mus = (Switch) findViewById(R.id.sw_mus);
-        sw_hea = (Switch) findViewById(R.id.sw_hea);
-        sw_lst = (Switch) findViewById(R.id.sw_lst);
-        sw_thr = (Switch) findViewById(R.id.sw_thr);
-        sw_cng = (Switch) findViewById(R.id.sw_cng);
-        sw_nau = (Switch) findViewById(R.id.sw_nau);
-        sw_dia = (Switch) findViewById(R.id.sw_dia);
+        sw_dtb = findViewById(R.id.sw_dtb);
+        sw_cpp = findViewById(R.id.sw_cpp);
+        sw_cnf = findViewById(R.id.sw_cnf);
+        sw_tsa = findViewById(R.id.sw_tsa);
+        sw_blu = findViewById(R.id.sw_blu);
+        sw_fev = findViewById(R.id.sw_fev);
+        sw_cou = findViewById(R.id.sw_cou);
+        sw_fat = findViewById(R.id.sw_fat);
+        sw_mus = findViewById(R.id.sw_mus);
+        sw_hea = findViewById(R.id.sw_hea);
+        sw_lst = findViewById(R.id.sw_lst);
+        sw_thr = findViewById(R.id.sw_thr);
+        sw_cng = findViewById(R.id.sw_cng);
+        sw_nau = findViewById(R.id.sw_nau);
+        sw_dia = findViewById(R.id.sw_dia);
 
         DataBaseHelper dbh = new DataBaseHelper(Symptoms.this);
 
-        if(dbh.getSymptoms() != null)
+        symptoms = dbh.getSymptoms();
+
+        if(symptoms != null)
         {
-            sw_dtb.setChecked(true);
-            sw_dtb.setChecked(dbh.getSymptoms().isDtb());
-            sw_cpp.setChecked(dbh.getSymptoms().isCpp());
-            sw_tsa.setChecked(dbh.getSymptoms().isTsa());
-            sw_blu.setChecked(dbh.getSymptoms().isBlu());
-            sw_fev.setChecked(dbh.getSymptoms().isFev());
-            sw_cou.setChecked(dbh.getSymptoms().isCou());
-            sw_fat.setChecked(dbh.getSymptoms().isFat());
-            sw_mus.setChecked(dbh.getSymptoms().isMus());
-            sw_hea.setChecked(dbh.getSymptoms().isHea());
-            sw_lst.setChecked(dbh.getSymptoms().isLst());
-            sw_thr.setChecked(dbh.getSymptoms().isThr());
-            sw_cng.setChecked(dbh.getSymptoms().isCng());
-            sw_nau.setChecked(dbh.getSymptoms().isNau());
-            sw_dia.setChecked(dbh.getSymptoms().isDia());
+            sw_dtb.setChecked(symptoms.isDtb());
+            sw_cpp.setChecked(symptoms.isCpp());
+            sw_cnf.setChecked(symptoms.isCnf());
+            sw_tsa.setChecked(symptoms.isTsa());
+            sw_blu.setChecked(symptoms.isBlu());
+            sw_fev.setChecked(symptoms.isFev());
+            sw_cou.setChecked(symptoms.isCou());
+            sw_fat.setChecked(symptoms.isFat());
+            sw_mus.setChecked(symptoms.isMus());
+            sw_hea.setChecked(symptoms.isHea());
+            sw_lst.setChecked(symptoms.isLst());
+            sw_thr.setChecked(symptoms.isThr());
+            sw_cng.setChecked(symptoms.isCng());
+            sw_nau.setChecked(symptoms.isNau());
+            sw_dia.setChecked(symptoms.isDia());
         }
 
 
@@ -61,35 +66,39 @@ public class Symptoms extends AppCompatActivity {
 
                 if (v.getId()==R.id.button_what) {
                     if (sw_dtb.isChecked()){
-                        Toast.makeText(getApplicationContext(), "Acude a tu centro de salud más cercano", Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getApplicationContext(), "Acude a tu centro de salud más cercano", Toast.LENGTH_LONG).show();
                     }
                     else {
                         Toast.makeText(getApplicationContext(), "Quédate en casa", Toast.LENGTH_SHORT).show();
                     }
 
-
-                    if(dbh.getSymptoms() == null)
+                    if(symptoms != null)
                     {
-                        SymptomsModel sm;
                         try {
-                            sm = new SymptomsModel(-1, "aaa",
-                                    sw_dtb.isChecked(), sw_cpp.isChecked(), sw_cnf.isChecked(), sw_tsa.isChecked(),
-                                    sw_blu.isChecked(), sw_fev.isChecked(), sw_cou.isChecked(), sw_fat.isChecked(),
-                                    sw_mus.isChecked(), sw_hea.isChecked(), sw_lst.isChecked(), sw_thr.isChecked(),
-                                    sw_cng.isChecked(), sw_nau.isChecked(), sw_dia.isChecked());
+                            symptoms.setBlu(sw_blu.isChecked());
+                            symptoms.setCnf(sw_cnf.isChecked());
+                            symptoms.setCng(sw_cng.isChecked());
+                            symptoms.setCou(sw_cou.isChecked());
+                            symptoms.setCpp(sw_cpp.isChecked());
+                            symptoms.setDia(sw_dia.isChecked());
+                            symptoms.setDtb(sw_dtb.isChecked());
+                            symptoms.setFat(sw_fat.isChecked());
+                            symptoms.setFev(sw_fev.isChecked());
+                            symptoms.setThr(sw_thr.isChecked());
+                            symptoms.setLst(sw_lst.isChecked());
+                            symptoms.setTsa(sw_tsa.isChecked());
+                            symptoms.setMus(sw_mus.isChecked());
+                            symptoms.setHea(sw_hea.isChecked());
+                            symptoms.setNau(sw_nau.isChecked());
+
                             Toast.makeText(getApplicationContext(), "Guardado", Toast.LENGTH_SHORT).show();
 
                         } catch (Exception e) {
-                            sm = new SymptomsModel(-1, "",
-                                    false, false, false, false,
-                                    false, false, false, false,
-                                    false, false, false, false,
-                                    false, false, false);
                             Toast.makeText(getApplicationContext(), "Guardado vacío", Toast.LENGTH_SHORT).show();
 
                         }
 
-                        boolean b = dbh.addSymptoms(sm);
+                        boolean b = dbh.updateSymptoms(symptoms);
                     }
                 }
             }

@@ -16,6 +16,10 @@
     <string name="symtomp2">Síntoma 2</string>
     <string name="add">Añadir</string>
     <string name="name">Nombre</string>
+    <string name="tips_tittle">Tres medidas importantes para desacelerar la propagación</string>
+    <string name="tip_one">Usa mascarilla</string>
+    <string name="tip_two">Cuida la higiene de manos</string>
+    <string name="tip_three">Mantén la distancia de seguridad (2 metros)</string>
     <string name="title_activity_vaccination_list">ScrollingActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"

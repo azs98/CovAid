@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/sw_hea"
+        android:id="@+id/sw_hep"
         android:layout_width="167dp"
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
@@ -50,7 +50,7 @@
         android:text="Switch"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sw_hea" />
+        app:layout_constraintTop_toBottomOf="@+id/sw_hep" />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/sw_eld"

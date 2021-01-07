@@ -20,7 +20,7 @@ public class Vaccination extends AppCompatActivity {
     //references
     Button btn_saveVaccination;
     EditText et_vaccinationName;
-    SwitchCompat sw_hea, sw_res, sw_big, sw_eld, sw_ris, sw_com, sw_soc,
+    SwitchCompat sw_hep, sw_res, sw_big, sw_eld, sw_ris, sw_com, sw_soc,
             sw_ess, sw_edu, sw_chi, sw_tee, sw_adu, sw_hia, sw_prg, sw_pni;
 
     @Override
@@ -30,7 +30,7 @@ public class Vaccination extends AppCompatActivity {
 
         btn_saveVaccination = findViewById(R.id.btn_saveVaccination);
         et_vaccinationName = findViewById(R.id.et_vaccinationName);
-        sw_hea = findViewById(R.id.sw_hea);
+        sw_hep = findViewById(R.id.sw_hep);
         sw_res = findViewById(R.id.sw_res);
         sw_big = findViewById(R.id.sw_big);
         sw_eld = findViewById(R.id.sw_eld);
@@ -55,22 +55,31 @@ public class Vaccination extends AppCompatActivity {
                 VaccinationModel vm;
                 try {
                     vm = new VaccinationModel(-1, et_vaccinationName.getText().toString(),
-                            sw_hea.isChecked(), sw_res.isChecked(), sw_big.isChecked(), sw_eld.isChecked(),
+                            sw_hep.isChecked(), sw_res.isChecked(), sw_big.isChecked(), sw_eld.isChecked(),
                             sw_ris.isChecked(), sw_com.isChecked(), sw_soc.isChecked(), sw_ess.isChecked(),
                             sw_edu.isChecked(), sw_chi.isChecked(), sw_tee.isChecked(), sw_adu.isChecked(),
                             sw_hia.isChecked(), sw_prg.isChecked(), sw_pni.isChecked());
+
+                    DataBaseHelper dataBaseHelper = new DataBaseHelper(Vaccination.this);
+                    boolean b = dataBaseHelper.addOne(vm);
+
                     Toast.makeText(Vaccination.this, "Vacunación añadida", Toast.LENGTH_SHORT).show();
+
                 } catch (Exception e) {
-                    vm = new VaccinationModel(-1, "error", false, false, false, false,
+                    /*vm = new VaccinationModel(-1, "error", false, false, false, false,
                                                 false, false, false, false, false, false,
-                                                false, false, false, false, false);
+                                                false, false, false, false, false);*/
+                    if(e.getMessage().equals("name")){
+                        Toast.makeText(Vaccination.this, "Debes introducir un nombre",
+                                Toast.LENGTH_LONG).show();
+                    }
+                    if(e.getMessage().equals("age")){
+                        Toast.makeText(Vaccination.this, "No puedes pertencer a dos o más grupos de edad",
+                                Toast.LENGTH_LONG).show();
+                    }
                 }
 
-                DataBaseHelper dataBaseHelper = new DataBaseHelper(Vaccination.this);
-
-                boolean b = dataBaseHelper.addOne(vm);
-
-                Toast.makeText(Vaccination.this, "Success = " + b, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Vaccination.this, "Success = " + b, Toast.LENGTH_SHORT).show();
             }
         });
 
