@@ -111,4 +111,37 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="sw_dtb">Dificultad para respirar</string>
+    <string name="sw_cpp">Dolor persistente en el pecho</string>
+    <string name="sw_cnf">Confusión</string>
+    <string name="sw_blu">Coloración azul en labios o rostro</string>
+    <string name="sw_fev">Fiebre</string>
+    <string name="sw_cou">Tos</string>
+    <string name="sw_fat">Cansancio</string>
+    <string name="sw_mus">Dolor muscular</string>
+    <string name="sw_head">Dolor de cabeza</string>
+    <string name="sw_lst">Pérdida del olfato o gusto</string>
+    <string name="sw_thr">Dolor de garganta</string>
+    <string name="sw_cng">Congestión</string>
+    <string name="cng_nau">Náuseas</string>
+    <string name="sw_dia">Diarrea</string>
+    <string name="sw_tsa">Incapacidad de permanecer despierto</string>
+    <string name="sw_hep">Personal sanitario</string>
+    <string name="sw_res">Residencias de ancianos</string>
+    <string name="sw_big">Grandes dependientes</string>
+    <string name="sw_eld">Ancianos</string>
+    <string name="sw_ris">Personas con condiciones de riesgo</string>
+    <string name="sw_com">Trabajadores en comunidad</string>
+    <string name="sw_soc">Culnerables por su situación socioeconómica</string>
+    <string name="sw_ess">Trabajadores esenciales</string>
+    <string name="sw_edu">Personal docente</string>
+    <string name="sw_chi">Población infantil</string>
+    <string name="sw_tee">Adolescentes y jóvenes</string>
+    <string name="sw_adu">Adultos</string>
+    <string name="sw_hia">En zona de alta incidencia</string>
+    <string name="sw_prg">Embarazadas</string>
+    <string name="sw_pni">Seropositivas</string>
+    <string name="toast_added_vacc">Vacunación añadida</string>
+    <string name="toast_input_name">Debes introducir un nombre</string>
+    <string name="toast_groups">No puedes pertencer a dos o más grupos de edad</string>
 </resources>

@@ -63,18 +63,18 @@ public class Vaccination extends AppCompatActivity {
                     DataBaseHelper dataBaseHelper = new DataBaseHelper(Vaccination.this);
                     boolean b = dataBaseHelper.addOne(vm);
 
-                    Toast.makeText(Vaccination.this, "Vacunación añadida", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Vaccination.this, getApplicationContext().getString(R.string.toast_added_vacc), Toast.LENGTH_SHORT).show();
 
                 } catch (Exception e) {
                     /*vm = new VaccinationModel(-1, "error", false, false, false, false,
                                                 false, false, false, false, false, false,
                                                 false, false, false, false, false);*/
                     if(e.getMessage().equals("name")){
-                        Toast.makeText(Vaccination.this, "Debes introducir un nombre",
+                        Toast.makeText(Vaccination.this, getApplicationContext().getString(R.string.toast_input_name),
                                 Toast.LENGTH_LONG).show();
                     }
                     if(e.getMessage().equals("age")){
-                        Toast.makeText(Vaccination.this, "No puedes pertencer a dos o más grupos de edad",
+                        Toast.makeText(Vaccination.this, getApplicationContext().getString(R.string.toast_groups),
                                 Toast.LENGTH_LONG).show();
                     }
                 }

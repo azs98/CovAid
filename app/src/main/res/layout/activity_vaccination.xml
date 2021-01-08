@@ -37,7 +37,7 @@
         android:layout_width="167dp"
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
-        android:text="Switch"
+        android:text="@string/sw_hep"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_vaccinationName" />
@@ -47,7 +47,7 @@
         android:layout_width="167dp"
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
-        android:text="Switch"
+        android:text="@string/sw_res"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sw_hep" />
@@ -57,7 +57,7 @@
         android:layout_width="167dp"
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
-        android:text="Switch"
+        android:text="@string/sw_eld"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sw_big" />
@@ -67,7 +67,7 @@
         android:layout_width="167dp"
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
-        android:text="Switch"
+        android:text="@string/sw_com"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sw_ris" />
@@ -77,7 +77,7 @@
         android:layout_width="167dp"
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
-        android:text="Switch"
+        android:text="@string/sw_ess"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sw_soc" />
@@ -87,7 +87,7 @@
         android:layout_width="167dp"
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
-        android:text="Switch"
+        android:text="@string/sw_soc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sw_com" />
@@ -97,7 +97,7 @@
         android:layout_width="167dp"
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
-        android:text="Switch"
+        android:text="@string/sw_ris"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sw_eld" />
@@ -107,7 +107,7 @@
         android:layout_width="167dp"
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
-        android:text="Switch"
+        android:text="@string/sw_big"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sw_res" />
@@ -117,7 +117,7 @@
         android:layout_width="167dp"
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
-        android:text="Switch"
+        android:text="@string/sw_edu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sw_ess" />
@@ -127,7 +127,7 @@
         android:layout_width="167dp"
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
-        android:text="Switch"
+        android:text="@string/sw_tee"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sw_chi" />
@@ -137,7 +137,7 @@
         android:layout_width="167dp"
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
-        android:text="Switch"
+        android:text="@string/sw_pni"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sw_prg" />
@@ -147,7 +147,7 @@
         android:layout_width="167dp"
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
-        android:text="Switch"
+        android:text="@string/sw_adu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sw_tee" />
@@ -157,7 +157,7 @@
         android:layout_width="167dp"
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
-        android:text="Switch"
+        android:text="@string/sw_prg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sw_hia" />
@@ -167,7 +167,7 @@
         android:layout_width="167dp"
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
-        android:text="Switch"
+        android:text="@string/sw_hia"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sw_adu" />
@@ -190,7 +190,7 @@
         android:layout_width="167dp"
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
-        android:text="Switch"
+        android:text="@string/sw_chi"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sw_edu" />

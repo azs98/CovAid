@@ -65,11 +65,11 @@ public class Symptoms extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (v.getId()==R.id.button_what) {
-                    if (sw_dtb.isChecked()){
-                        //Toast.makeText(getApplicationContext(), "Acude a tu centro de salud más cercano", Toast.LENGTH_LONG).show();
+                    if (sw_dtb.isChecked() || sw_cpp.isChecked() || sw_cnf.isChecked() || sw_tsa.isChecked() || sw_blu.isChecked()){
+                        Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.toast_medical_centre), Toast.LENGTH_LONG).show();
                     }
                     else {
-                        Toast.makeText(getApplicationContext(), "Quédate en casa", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.toast_stay_home), Toast.LENGTH_SHORT).show();
                     }
 
                     if(symptoms != null)
