@@ -91,10 +91,8 @@ public class Symptoms extends AppCompatActivity {
                             symptoms.setHea(sw_hea.isChecked());
                             symptoms.setNau(sw_nau.isChecked());
 
-                            Toast.makeText(getApplicationContext(), "Guardado", Toast.LENGTH_SHORT).show();
 
                         } catch (Exception e) {
-                            Toast.makeText(getApplicationContext(), "Guardado vacío", Toast.LENGTH_SHORT).show();
 
                         }
 
