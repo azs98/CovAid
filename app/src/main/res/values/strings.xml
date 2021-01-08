@@ -123,7 +123,7 @@
     <string name="sw_lst">Pérdida del olfato o gusto</string>
     <string name="sw_thr">Dolor de garganta</string>
     <string name="sw_cng">Congestión</string>
-    <string name="cng_nau">Náuseas</string>
+    <string name="sw_nau">Náuseas</string>
     <string name="sw_dia">Diarrea</string>
     <string name="sw_tsa">Incapacidad de permanecer despierto</string>
     <string name="sw_hep">Personal sanitario</string>

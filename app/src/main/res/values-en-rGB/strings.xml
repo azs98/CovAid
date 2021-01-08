@@ -27,7 +27,7 @@
     <string name="sw_lst">Loss of smell or taste</string>
     <string name="sw_thr">Throat pain</string>
     <string name="sw_cng">Congestion</string>
-    <string name="cng_nau">Nausea</string>
+    <string name="sw_nau">Nausea</string>
     <string name="sw_dia">Diarrhea</string>
     <string name="sw_tsa">Inability to stay awake</string>
     <string name="sw_hep">Health personnel</string>
