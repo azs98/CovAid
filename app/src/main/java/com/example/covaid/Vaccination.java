@@ -3,6 +3,7 @@ package com.example.covaid;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -46,8 +47,6 @@ public class Vaccination extends AppCompatActivity {
         sw_prg = findViewById(R.id.sw_prg);
         sw_pni = findViewById(R.id.sw_pni);
 
-
-
         btn_saveVaccination.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -78,10 +77,15 @@ public class Vaccination extends AppCompatActivity {
                                 Toast.LENGTH_LONG).show();
                     }
                 }
-
+                goToVaccList(v);
                 //Toast.makeText(Vaccination.this, "Success = " + b, Toast.LENGTH_SHORT).show();
             }
         });
 
+    }
+
+    public void goToVaccList (View view) {
+        Intent intent = new Intent(this, VaccList.class);
+        startActivity(intent);
     }
 }
