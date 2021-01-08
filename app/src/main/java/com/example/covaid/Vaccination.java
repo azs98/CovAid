@@ -65,9 +65,6 @@ public class Vaccination extends AppCompatActivity {
                     Toast.makeText(Vaccination.this, getApplicationContext().getString(R.string.toast_added_vacc), Toast.LENGTH_SHORT).show();
 
                 } catch (Exception e) {
-                    /*vm = new VaccinationModel(-1, "error", false, false, false, false,
-                                                false, false, false, false, false, false,
-                                                false, false, false, false, false);*/
                     if(e.getMessage().equals("name")){
                         Toast.makeText(Vaccination.this, getApplicationContext().getString(R.string.toast_input_name),
                                 Toast.LENGTH_LONG).show();
@@ -78,7 +75,6 @@ public class Vaccination extends AppCompatActivity {
                     }
                 }
                 goToVaccList(v);
-                //Toast.makeText(Vaccination.this, "Success = " + b, Toast.LENGTH_SHORT).show();
             }
         });
 

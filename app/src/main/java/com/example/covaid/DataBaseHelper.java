@@ -185,28 +185,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getReadableDatabase();
 
-        //db.execSQL("DELETE FROM " + SYMPTOM_TABLE);
-
-        //db.execSQL("ALTER TABLE " + SYMPTOM_TABLE + " ADD " + COLUMN_SYMPTOM_NAME + " TEXT");
-
-        /*db.execSQL("INSERT INTO " + SYMPTOM_TABLE +
-
-                        " (ID, " + COLUMN_SYMPTOM_NAME + " , " + COLUMN_SYMPTOM_DTB + " , " +
-                            COLUMN_SYMPTOM_CPP + " , " + COLUMN_SYMPTOM_CNF + " , " +
-                            COLUMN_SYMPTOM_TSA + " , " + COLUMN_SYMPTOM_BLU + " , " +
-                            COLUMN_SYMPTOM_FEV + " , " + COLUMN_SYMPTOM_COU + " , " +
-                            COLUMN_SYMPTOM_FAT + " , " + COLUMN_SYMPTOM_MUS + " , " +
-                            COLUMN_SYMPTOM_HEA + " , " + COLUMN_SYMPTOM_LST + " , " +
-                            COLUMN_SYMPTOM_THR + " , " + COLUMN_SYMPTOM_CNG + " , " +
-                            COLUMN_SYMPTOM_NAU + " , " + COLUMN_SYMPTOM_DIA + ")" +
-
-
-                        " VALUES (1, 'unique', " +
-                        "0, 0, 0, 0, 0, 0, 0, 0, " +
-                        "0, 0, 0, 0, 0, 0, 0)");
-
-         */
-
         String queryString = "SELECT * FROM " + SYMPTOM_TABLE + " WHERE " + COLUMN_SYMPTOM_NAME + "='unique'";
 
         Cursor cursor = db.rawQuery(queryString, null);
